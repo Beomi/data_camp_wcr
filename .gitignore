@@ -1,3 +1,6 @@
+# Test python file
+*.test.py
+
 # tmp folder
 #
 tmp/
