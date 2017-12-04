@@ -16,8 +16,10 @@ def get_post_url_list():
 
     post_url_list = []
 
+http://cafe.naver.com/ArticleList.nhn?search.clubid=27436155&search.menuid=15&search.boardtype=L
+
     for PAGE in range(1, 10):
-        driver.get(f'http://cafe.naver.com/ArticleList.nhn?search.clubid={CAFE_NUM}&search.menuid={MENU_ID}&search.page={PAGE}')
+        driver.get(f'http://cafe.naver.com/ArticleList.nhn?search.clubid=27436155&search.menuid=15&search.boardtype=L&search.page={PAGE}')
         # iframe 내부로 이동 (driver가 보는 document의 위치 전환)
         # .frame안의 값은 Frame의 name값
         driver.switch_to.frame('cafe_main')
@@ -28,6 +30,9 @@ def get_post_url_list():
             # print('글제목: ', post.text)
             # print('글링크: ', url)
             post_url_list.append(url)
+        post_link_list = driver.find_elements_by_css_selector('.board-list a')
+        for link in post_link_list:
+            print(link.get_attribute("href"))
     return post_url_list
 
 post_url_list = get_post_url_list()
@@ -36,7 +41,8 @@ for url in post_url_list:
     driver.get(url)
     driver.switch_to.frame('cafe_main')
     # Selenium의 find_element_by_css_selector 에서는 nth-child를 쓸 수 있습니다.
-    title = driver.find_element_by_css_selector('table > tbody > tr > td:nth-child(1) > span')
+    # div.tit-box > div.fl > table > tbody > tr > td:nth-child(1) > span
+    title = driver.find_element_by_css_selector('div.tit-box > div.fl > table > tbody > tr > td:nth-child(1) > span')
     content = driver.find_element_by_css_selector('#tbody')
     print(title.text.strip())
     print(content.text.strip())

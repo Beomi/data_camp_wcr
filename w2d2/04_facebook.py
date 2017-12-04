@@ -19,7 +19,7 @@ for _ in range(3):
     driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
 
 # 화면에 뜨는 모든 포스트 찾기
-post_list = driver.find_elements_by_css_selector('section.storyStream')
+post_list = driver.find_elements_by_css_selector('section.storyStream > div')
 for post in post_list:
     content_list = post.find_element_by_css_selector('div').get_attribute("innerText")
     print('----')

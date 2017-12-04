@@ -4,7 +4,9 @@ test.py
 *.txt
 *.jpg
 *.png
+*.pdf
 chromedriver
+ridi.py
 
 # tmp folder
 #

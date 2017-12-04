@@ -3,7 +3,6 @@ from multiprocessing import Pool
 import time
 
 start_time = time.time()
-print('starttime: ', start_time)
 
 def get_data(article):
     article_id = article['articleId']
@@ -74,4 +73,4 @@ import json
 json.dump(data, open('naver_titles.json', 'w+'))
 
 
-print('endtime: ', time.time() - start_time)
+print('Total Time: ', time.time() - start_time)

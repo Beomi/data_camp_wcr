@@ -1,4 +1,5 @@
 from selenium import webdriver
+from time import sleep
 
 driver = webdriver.Chrome('chromedriver')
 driver.get('https://www.kakaobank.com/')
@@ -13,4 +14,5 @@ print(title.text)
 for t in small_titles:
     print(t.text)
 
+sleep(1)
 driver.quit()
