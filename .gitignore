@@ -1,5 +1,10 @@
 # Test python file
 *.test.py
+test.py
+*.txt
+*.jpg
+*.png
+chromedriver
 
 # tmp folder
 #
