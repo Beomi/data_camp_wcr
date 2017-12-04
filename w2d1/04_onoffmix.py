@@ -9,7 +9,6 @@ with requests.Session() as s:
     login = s.post('https://onoffmix.com/account/login', data={
         'email': 'userid@mail.com',
         'pw': 'mypassword1234',
-        'proc': 'login'
     })
     html = s.get('http://onoffmix.com/account/event')
     soup = bs(html.text, 'lxml')
