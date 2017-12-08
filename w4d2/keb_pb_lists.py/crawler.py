@@ -42,5 +42,5 @@ soup = bs(r.text, 'lxml')
 
 pb_list = soup.select('div.result_list')
 
-print(len(pb_list)) # 779개 
+print(len(pb_list)) # 779개
 
