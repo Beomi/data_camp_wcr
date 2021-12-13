@@ -5,7 +5,7 @@ chardet==3.0.4
 cssselect==1.0.1
 future==0.16.0
 idna==2.6
-lxml==4.1.1
+lxml==4.6.5
 python-telegram-bot==8.1.1
 requests==2.18.4
 selenium==3.7.0
